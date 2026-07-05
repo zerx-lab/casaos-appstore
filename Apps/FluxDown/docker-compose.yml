@@ -24,6 +24,7 @@ services:
     # 可选：接外部 PostgreSQL
     # FLUXDOWN_DATABASE_URL: postgres://user:pass@host:5432/fluxdown
 x-casaos:
+  id: dev.zerx.fluxdown
   app_id: dev.zerx.fluxdown
   # --- Access entry ---
   main: fluxdown-server
