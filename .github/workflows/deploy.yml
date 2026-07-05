@@ -1,0 +1,41 @@
+name: Build And Publish Dist
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y librsvg2-bin
+          pip install pyyaml Pillow
+      - name: Build static appstore dist
+        run: |
+          BASE_URL="https://cdn.jsdelivr.net/gh/${{ github.repository }}@gh-pages"
+          python3 scripts/build_appstore.py \
+            --source . \
+            --output dist \
+            --base-url "${BASE_URL}"
+          touch dist/.nojekyll
+      - name: Deploy dist to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
+      - name: Refresh jsDelivr cache
+        run: |
+          curl -fsSL "https://purge.jsdelivr.net/gh/${{ github.repository }}@gh-pages/en_US/index.json" || true
