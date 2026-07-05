@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "store_id": "zerx-fluxdown",
+  "name": "FluxDown Store",
+  "description": "Official FluxDown download manager for CasaOS / ZimaOS",
+  "maintainer": "zerx-lab",
+  "url": "https://github.com/zerx-lab/FluxDown"
+}

@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "updated_at": "2026-07-05T07:07:26Z",
+  "app_count": 1,
+  "base_url": "https://cdn.jsdelivr.net/gh/zerx-lab/casaos-appstore@gh-pages",
+  "apps": [
+    {
+      "id": "dev.zerx.fluxdown",
+      "title": "FluxDown",
+      "tagline": "Downloads, Supercharged.",
+      "category": "Downloader",
+      "categories": [
+        "downloader"
+      ],
+      "author": "zerx-lab",
+      "developer": "zerx-lab",
+      "architectures": [
+        "amd64"
+      ],
+      "icon": "/apps/dev.zerx.fluxdown/assets/icon.svg",
+      "thumbnail": "",
+      "compose_url": "/apps/dev.zerx.fluxdown/docker-compose.yml",
+      "meta_url": "/apps/dev.zerx.fluxdown/meta.json",
+      "content_hash": "d63f693c",
+      "version": "0.1.54"
+    }
+  ]
+}

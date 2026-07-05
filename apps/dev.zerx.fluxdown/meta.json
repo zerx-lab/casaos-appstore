@@ -1,0 +1,31 @@
+{
+  "app_id": "dev.zerx.fluxdown",
+  "tagline": "Downloads, Supercharged.",
+  "description": "A blazing fast, multi-protocol download manager powered by a Rust engine. HTTP/HTTPS/FTP/BitTorrent/HLS with intelligent segmentation, resume, speed control, browser extension, aria2-compatible JSON-RPC and an MCP endpoint. (alternative to Internet Download Manager, aria2)",
+  "tips": {
+    "before_install": "First launch generates an admin token printed once in the container log: `docker logs fluxdown-server 2>&1 | grep -i token`. The management API and MCP endpoint require this token."
+  },
+  "author": "zerx-lab",
+  "developer": "zerx-lab",
+  "category": "Downloader",
+  "architectures": [
+    "amd64"
+  ],
+  "update_at": "2026-07-04",
+  "website": "https://fluxdown.zerx.dev",
+  "repo": "https://github.com/zerx-lab/FluxDown",
+  "support": "https://github.com/zerx-lab/FluxDown/issues",
+  "docs": "https://fluxdown.zerx.dev",
+  "title": "FluxDown",
+  "release_note": "See https://github.com/zerx-lab/FluxDown/releases",
+  "base_url": "https://cdn.jsdelivr.net/gh/zerx-lab/casaos-appstore@gh-pages",
+  "id": "dev.zerx.fluxdown",
+  "version": "0.1.54",
+  "categories": [
+    "downloader"
+  ],
+  "min_memory": 0,
+  "min_image_size": {
+    "amd64": 49539223
+  }
+}

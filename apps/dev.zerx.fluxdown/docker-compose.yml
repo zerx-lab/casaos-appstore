@@ -1,0 +1,30 @@
+name: fluxdown
+services:
+  fluxdown-server:
+    image: ghcr.io/zerx-lab/fluxdown-server:0.1.54
+    container_name: fluxdown-server
+    restart: unless-stopped
+    ports:
+    - target: 17800
+      published: '17800'
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: /DATA/AppData/$AppID/data
+      target: /data
+    - type: bind
+      source: /DATA/Downloads
+      target: /root/Downloads
+    environment:
+      TZ: $TZ
+x-casaos:
+  id: dev.zerx.fluxdown
+  main: fluxdown-server
+  index: /
+  port_map: '17800'
+  scheme: http
+  title:
+    en_US: FluxDown
+    zh_CN: FluxDown
+  icon: https://cdn.jsdelivr.net/gh/zerx-lab/casaos-appstore@gh-pages/apps/dev.zerx.fluxdown/assets/icon.svg
+  version: 0.1.54
